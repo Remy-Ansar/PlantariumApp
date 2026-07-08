@@ -18,25 +18,26 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Table(name = "user", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "email")
-})
-public class User implements Serializable  {
+@Table(name = "user_info")
+public class UserInfo implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", unique = true, nullable = false)
+    @Column(name = "user_info_id", unique = true, nullable = false)
     @Hidden
     private Long id;
 
-    @Column(nullable = false, name = "email")
-    private String email;
+    @Column(nullable = true, name = "firstName")
+    private String firstName;
 
-    @Column(nullable = false, name = "password")
-    private String password;
+    @Column(nullable = true, name = "lastName")
+    private String lastName;
+
+    @Column(nullable = true, name = "profile_image_path")
+    private String profileImagePath;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(updatable = false)
@@ -48,6 +49,7 @@ public class User implements Serializable  {
     @UpdateTimestamp
     private String updatedAt;
 
-    @OneToOne(mappedBy = "user")
-    private UserInfo userInfo;
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false, unique = true)
+    private User user;
 }
