@@ -18,7 +18,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Table(name = "user_info")
+@Table(name = "User_info")
 public class UserInfo implements Serializable {
 
     @Serial
@@ -26,7 +26,7 @@ public class UserInfo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_info_id", unique = true, nullable = false)
+    @Column(name = "id_user_info", unique = true, nullable = false)
     @Hidden
     private Long id;
 
@@ -50,6 +50,6 @@ public class UserInfo implements Serializable {
     private String updatedAt;
 
     @OneToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false, unique = true)
+    @JoinColumn(name = "id_user", referencedColumnName = "id_user", nullable = false, unique = true)
     private User user;
 }
