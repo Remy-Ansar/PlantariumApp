@@ -78,8 +78,6 @@ CREATE TABLE Diseases (
     id_diseases INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(150) NOT NULL UNIQUE,
     description VARCHAR(255),
-    created_at DATETIME NOT NULL,
-    updated_at DATETIME
 );
 
 CREATE TABLE Health_status (
