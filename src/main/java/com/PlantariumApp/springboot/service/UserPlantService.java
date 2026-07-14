@@ -1,4 +1,4 @@
-package com.PlantariumApp.springboot.model;
+package com.PlantariumApp.springboot.service;
 
 import org.springframework.stereotype.Service;
 

@@ -18,7 +18,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Table(name = "user", uniqueConstraints = {
+@Table(name = "User", uniqueConstraints = {
         @UniqueConstraint(columnNames = "email")
 })
 public class User implements Serializable  {
@@ -28,7 +28,7 @@ public class User implements Serializable  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", unique = true, nullable = false)
+    @Column(name = "id_user", unique = true, nullable = false)
     @Hidden
     private Long id;
 
