@@ -96,12 +96,12 @@ CREATE TABLE Health_status_diseases (
 CREATE TABLE Plants (
     id_plant INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(255) NOT NULL UNIQUE,
-    vernacular_name VARCHAR(255),
-    created_at DATETIME NOT NULL,
-    updated_at DATETIME,
+    vernacular_name VARCHAR(255) UNIQUE,
     description TEXT,
     default_image_path VARCHAR(255),
     enable BOOLEAN,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME,
     family_id INT UNSIGNED,
     genus_id INT UNSIGNED,
     species_id INT UNSIGNED

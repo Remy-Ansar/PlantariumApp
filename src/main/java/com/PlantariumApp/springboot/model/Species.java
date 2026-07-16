@@ -9,6 +9,8 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -31,4 +33,8 @@ public class Species implements Serializable {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "species", cascade = CascadeType.ALL, orphanRemoval = false)
+    private List<Plants> plants = new ArrayList<>();
+
 }
