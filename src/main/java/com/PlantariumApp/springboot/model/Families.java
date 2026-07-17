@@ -34,6 +34,6 @@ public class Families implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "plants_id", cascade = CascadeType.ALL, orphanRemoval = false)
+    @OneToMany(mappedBy = "families", cascade = CascadeType.ALL, orphanRemoval = false)
     private List<Plants> plants = new ArrayList<>();
 }

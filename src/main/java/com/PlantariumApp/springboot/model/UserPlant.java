@@ -41,6 +41,6 @@ public class UserPlant implements Serializable {
     private String updatedAt;
 
     @OneToOne
-    @JoinColumn(name = "id_user", referencedColumnName = "id_user", nullable = false, unique = true)
-    private User user;
+    @JoinColumn(name = "userPlant", referencedColumnName = "id_user", nullable = false, unique = true)
+    private User user_id;
 }

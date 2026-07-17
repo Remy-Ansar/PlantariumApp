@@ -48,9 +48,9 @@ public class User implements Serializable  {
     @UpdateTimestamp
     private String updatedAt;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user_id")
     private UserInfo userInfo;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user_id")
     private UserPlant userPlant;
 }

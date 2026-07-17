@@ -48,17 +48,17 @@ public class Plants implements Serializable {
     @Column(name = "enable")
     private Boolean enable;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_genus", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "genus_id", nullable = false)
     private Genus genus;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_species", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "species_id", nullable = false)
     private Species species;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_family", nullable = false)
-    private Families family;
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "family_id", nullable = false)
+    private Families families;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(updatable = false)
