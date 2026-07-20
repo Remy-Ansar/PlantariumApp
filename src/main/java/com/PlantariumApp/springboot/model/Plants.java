@@ -60,6 +60,10 @@ public class Plants implements Serializable {
     @JoinColumn(name = "family_id", nullable = false)
     private Families families;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "watering_id", nullable = false)
+    private Watering watering;
+
     @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(updatable = false)
     @CreationTimestamp
