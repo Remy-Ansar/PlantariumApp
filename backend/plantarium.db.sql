@@ -12,7 +12,7 @@ CREATE TABLE Users (
     created_at DATETIME NOT NULL,
     updated_at DATETIME
 );
-
+//
 CREATE TABLE User_infos (
     id_user_info INT UNSIGNED PRIMARY KEY auto_increment,
     first_name VARCHAR(50) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE User_infos (
     updated_at DATETIME,
     user_id INT UNSIGNED
 );
-
+//
 CREATE TABLE User_plants (
     id_user_plant INT UNSIGNED PRIMARY KEY auto_increment,
     created_at DATETIME NOT NULL,
@@ -30,39 +30,39 @@ CREATE TABLE User_plants (
     user_id INT UNSIGNED,
     plant_id INT UNSIGNED
 );
-
+//
 CREATE TABLE Families (
     id_family INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(255) NOT NULL
 );
-
+//
 CREATE TABLE Genus (
     id_genus INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(255) NOT NULL,
     family_id INT UNSIGNED
 );
-
+//
 CREATE TABLE Species (
     id_species INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(255) NOT NULL,
     genus_id INT UNSIGNED
 );
-
+//
 CREATE TABLE Categories (
     id_categorie INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(100) NOT NULL UNIQUE
 );
-
+//
 CREATE TABLE Seasons (
     id_season INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(255) NOT NULL
 );
-
+//
 CREATE TABLE Colors (
     id_color INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(255) NOT NULL
 );
-
+//
 CREATE TABLE Weather (
     id_weather INT UNSIGNED PRIMARY KEY auto_increment,
     condition_name VARCHAR(100),
@@ -73,26 +73,26 @@ CREATE TABLE Weather (
     city VARCHAR(100),
     recorded_at DATETIME NOT NULL
 );
-
+//
 CREATE TABLE Diseases (
     id_diseases INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(150) NOT NULL UNIQUE,
-    description VARCHAR(255),
+    description VARCHAR(255)
 );
-
+//
 CREATE TABLE Health_status (
     id_health_status INT UNSIGNED PRIMARY KEY auto_increment,
     status ENUM('En bonne sante', 'Malade', 'Morte') NOT NULL,
     recorded_at DATETIME NOT NULL,
     plant_detail_id INT UNSIGNED
 );
-
+//
 CREATE TABLE Health_status_diseases (
     id_health_status_disease INT UNSIGNED PRIMARY KEY auto_increment,
     health_status_id INT UNSIGNED,
     disease_id INT UNSIGNED
 );
-
+//
 CREATE TABLE Plants (
     id_plant INT UNSIGNED PRIMARY KEY auto_increment,
     name VARCHAR(255) NOT NULL UNIQUE,
@@ -150,22 +150,22 @@ CREATE TABLE Warnings (
 
 CREATE TABLE Plant_detail (
     id_plant_detail INT UNSIGNED PRIMARY KEY auto_increment,
-    created_at DATETIME NOT NULL,
-    updated_at DATETIME,
     nickname VARCHAR(255),
     personal_notes TEXT,
     user_image_path VARCHAR(255),
     location VARCHAR(255),
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME,
     user_plants_id INT UNSIGNED
 );
 
 CREATE TABLE Plant_detail_watering (
     id_plant_detail_watering INT UNSIGNED PRIMARY KEY auto_increment,
-    created_at DATETIME NOT NULL,
-    updated_at DATETIME,
     note TEXT,
     frequency INT,
     quantity DECIMAL(6,2),
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME,
     watering_id INT UNSIGNED,
     plant_detail_id INT UNSIGNED
 );
